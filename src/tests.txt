@@ -1,3 +1,132 @@
 Move Gen optimization
 
-Move Gen no optimization time 164ms generations : 1000000  // Worst case in my test
+GENERATIONS 100 Hundred
+
+Move Gen no optimization 
+time 0ms
+
+Move Gen switch and splitting loops 
+time 0ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 0ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 0ms
+
+
+
+GENERATIONS 1000 Thousand
+
+Move Gen no optimization 
+time 0ms
+
+Move Gen switch and splitting loops 
+time 1ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 0ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 0ms
+
+
+
+GENERATIONS 10000 Ten Thousand
+
+Move Gen no optimization 
+time 3ms
+
+Move Gen switch and splitting loops 
+time 3ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 3ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 2ms
+
+
+
+GENERATIONS 100000 Hundred Thousand
+
+Move Gen no optimization 
+time 34ms
+
+Move Gen switch and splitting loops 
+time 30ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 28ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 28ms
+
+
+
+GENERATIONS 1000000 Milion
+
+Move Gen no optimization 
+time 342ms
+
+Move Gen switch and splitting loops 
+time 304ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 277ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 275ms
+
+
+
+GENERATIONS 10000000 Ten Milion
+
+Move Gen no optimization 
+time 3422ms
+
+Move Gen switch and splitting loops 
+time 3043ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 2795ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 2747ms
+
+
+
+GENERATIONS 100000000 Hundred Milion
+
+Move Gen no optimization 
+time 34199ms
+
+Move Gen switch and splitting loops 
+time 30493ms
+
+Move Gen switch and splitting loops 
+allocating moves manually 
+time 27605ms
+
+Move Gen switch and splitting loops 
+allocating moves manually
+occupancies in variables
+time 27420ms

@@ -1,0 +1,3 @@
+Move Gen optimization
+
+Move Gen no optimization time 164ms generations : 1000000  // Worst case in my test

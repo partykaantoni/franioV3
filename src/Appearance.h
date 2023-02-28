@@ -102,8 +102,11 @@ void printMove(u_int move) {
 
 void printMoveList(moveList* moves){
 	for (int i = 0; i < moves -> count; i++){
+		printf("%d ", i + 1);
 		printMove(moves -> moves[i]);
+		nl();
 	}
+	printf("%d\n", moves -> count);
 }
 
 void printMoveListDebug(moveList* moves){

@@ -58,5 +58,29 @@
 #define ALPHA 1
 #define BETA 2
 
+/*
+    +=================+
+    |  Move Encoding |
+   +=================+
+
+0000 0000 0000 0000 0011 1111 Origin
+0000 0000 0000 1111 1100 0000 Target	
+0000 0000 1111 0000 0000 0000 Piece
+0000 1111 0000 0000 0000 0000 Promoted piece 
+0010 0000 0000 0000 0000 0000 Double pawn push flag 
+0100 0000 0000 0000 0000 0000 Enpassant flag 
+1000 0000 0000 0000 0000 0000 Castling flag
+*/
+
+#define encodeMove(origin, target, piece, promotion, capture, doublep, enpassant, castling) (origin) | (target << 6) | (piece << 12) | (promotion << 16) | (capture << 20) | (doublep << 21) | (enpassant << 22) | (castling << 23)
+#define origin(move) (move & 0x3f)
+#define target(move) ((move & 0xfc0) >> 6)
+#define piece(move) ((move & 0xf000) >> 12)
+#define promotion(move) ((move & 0xf0000) >> 16)
+#define capture(move) (move & 0x100000)
+#define doublep(move) (move & 0x200000)
+#define enpassant(move) (move & 0x400000)
+#define castling(move) (move & 0x800000)
+
 // Debug
 #define startPos "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"

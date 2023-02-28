@@ -83,3 +83,47 @@ void drawPosition() {
 
 	return;
 }
+
+void moveDetails(u_int move) {
+	printf("Origin : %s\n", indexToNames[origin(move)]);
+	printf("Target : %s\n", indexToNames[target(move)]);
+	printf("Piece  : %s\n\n", unicodePieces[piece(move)]);
+	printf("Promote: %s\n", promotion(move) ? unicodePieces[promotion(move)] : "none");
+	printf("Capture: %s\n", !capture(move) ? "no" : "yes");
+	printf("Doublep: %s\n", !doublep(move) ? "no" : "yes");
+	printf("Enp    : %s\n", !enpassant(move) ? "no" : "yes");
+	printf("castle : %s\n", !castling(move) ? "no" : "yes");
+}
+
+// For UCI
+void printMove(u_int move) {
+	printf("%s%s%c", indexToNames[origin(move)], indexToNames[target(move)], promoting[promotion(move)]);
+}
+
+void printMoveList(moveList* moves){
+	for (int i = 0; i < moves -> count; i++){
+		printMove(moves -> moves[i]);
+	}
+}
+
+void printMoveListDebug(moveList* moves){
+	if (moves -> count) printf("\n move   piece   capture   double   enpass   castling\n\n");
+	for (int i = 0; i < moves -> count; i++){
+		u_int move = moves -> moves[i];
+		printf(" %s%s%c   %s        %d        %d        %d        %d\n", indexToNames[origin(move)], indexToNames[target(move)], 
+																		promotion(move) ? promoting[promotion(move)] : ' ', 
+																		unicodePieces[piece(move)], 
+																		capture(move) ? 1 : 0, doublep(move) ? 1 : 0, 
+																		enpassant(move) ? 1 : 0, castling(move) ? 1 : 0);
+	}
+
+	printf(" Total: %d\n", moves -> count);
+}
+
+void printAttacked() {
+	U64 attacked = 0ULL;
+	for (int i = 0; i < 64; i++) {
+		if (isSquareAttacked(i)) setBit(attacked, i);
+	}
+	drawBitboard(attacked);
+}
